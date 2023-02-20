@@ -1,8 +1,8 @@
-import type { NextApiRequest } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { Ratelimit } from '@upstash/ratelimit';
 
 import { locales } from '@/lib/locale';
-import { OpenAIStream, PromptType, createOpenAIStreamPayload } from '@/lib/openAIStream';
+import { CompletionRequestOptions, PromptType, createCompletionRequest, createPrompt } from '@/lib/openai';
 import { redis } from '@/lib/redis';
 
 if (!process.env.OPENAI_API_KEY) {
@@ -30,7 +30,7 @@ const ratelimit = redis
     })
   : undefined;
 
-export default async function handler(req: Request): Promise<Response> {
+export default async function handler(req: ExtendedNextApiRequest, res: NextApiResponse<Data>) {
   // Rate Limiter Code
   // if (ratelimit) {
   //   const identifier = requestIp.getClientIp(req);
@@ -44,18 +44,24 @@ export default async function handler(req: Request): Promise<Response> {
   //   }
   // }
 
-  const { input, type, locale } = (await req.json()) as {
-    input: string;
-    type: PromptType;
-    locale?: keyof typeof locales;
-  };
+  const { input, type, locale } = req.body;
+  const prompt = createPrompt(input, type, locale);
+  const response = await createCompletionRequest(prompt, CompletionRequestOptions[type]);
+  // const resultText = completionResult?.data?.choices[0]?.text;
 
-  if (!input || !type) {
-    return new Response('No input in the request', { status: 400 });
-  }
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('Connection', 'keep-alive');
 
-  const payload = createOpenAIStreamPayload(input, type, locale);
+  // @ts-ignore
+  response.on('data', (chunk) => {
+    res.write(`data: ${chunk.toString()}\n\n`);
+  });
 
-  const stream = await OpenAIStream(payload);
-  return new Response(stream);
+  // @ts-ignore
+  response.on('end', () => {
+    res.write('event: end\ndata: \n\n');
+    res.end();
+  });
+  // res.status(200).json(resultText ?? 'Failed to restore image');
 }

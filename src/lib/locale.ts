@@ -3,6 +3,8 @@ export const locales = {
   ko: 'ko',
 } as const;
 
+export type Locale = (typeof locales)[keyof typeof locales];
+
 export const Locale = {
   en: {
     title: 'Idea Generator',
