@@ -75,12 +75,24 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
 
 export type PromptType = 'idea' | 'XYZ' | 'xyz';
 
-const CompletionRequestOptions: {
+function createOptions(
+  type: PromptType,
+  locale: Locale = 'en'
+): CompletionRequestOptions[keyof CompletionRequestOptions] {
+  return {
+    ...completionRequestOptions[type],
+    // max_tokens:
+    //   locale === 'en' ? completionRequestOptions[type].max_tokens : completionRequestOptions[type].max_tokens * 2.5,
+    max_tokens: 250,
+  };
+}
+type CompletionRequestOptions = {
   [key in PromptType]: Pick<
     OpenAIStreamPayload,
     'temperature' | 'top_p' | 'max_tokens' | 'frequency_penalty' | 'presence_penalty'
   >;
-} = {
+};
+const completionRequestOptions: CompletionRequestOptions = {
   idea: {
     temperature: 0.9,
     max_tokens: 100,
@@ -119,11 +131,12 @@ function createPrompt(input: string, type: PromptType, locale: Locale = 'en') {
 
 export function createOpenAIStreamPayload(input: string, type: PromptType, locale: Locale = 'en') {
   const prompt = createPrompt(input, type, locale);
+  const options = createOptions(type, locale);
   return {
     model: 'text-davinci-003',
     prompt,
     stream: true,
     n: 1,
-    ...CompletionRequestOptions[type],
+    ...options,
   };
 }
