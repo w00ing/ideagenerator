@@ -162,7 +162,8 @@ const Xyz: NextPage = () => {
                       </Tooltip>
                     </TooltipProvider>
                   )}
-                  {!loadingxyz && (
+                  {/* TODO: make it narrower */}
+                  {/* {!loadingxyz && (
                     <Button
                       className="mt-3"
                       onClick={() => generatexyzStream({ input: xyz, type: 'xyz' })}
@@ -170,7 +171,7 @@ const Xyz: NextPage = () => {
                     >
                       {Locale[(router.locale ?? 'en') as keyof typeof locales].button.further}
                     </Button>
-                  )}
+                  )} */}
                 </div>
               )}
             </motion.div>
