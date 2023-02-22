@@ -81,9 +81,6 @@ function createOptions(
 ): CompletionRequestOptions[keyof CompletionRequestOptions] {
   return {
     ...completionRequestOptions[type],
-    // max_tokens:
-    //   locale === 'en' ? completionRequestOptions[type].max_tokens : completionRequestOptions[type].max_tokens * 2.5,
-    max_tokens: 250,
   };
 }
 type CompletionRequestOptions = {
@@ -94,16 +91,16 @@ type CompletionRequestOptions = {
 };
 const completionRequestOptions: CompletionRequestOptions = {
   idea: {
-    temperature: 0.9,
-    max_tokens: 100,
-    top_p: 0.6,
+    temperature: 0.6,
+    max_tokens: 400,
+    top_p: 0.95,
     frequency_penalty: 1.2,
     presence_penalty: 0.7,
   },
 
   XYZ: {
     temperature: 0.6,
-    max_tokens: 80,
+    max_tokens: 200,
     top_p: 0.4,
     frequency_penalty: 1.3,
     presence_penalty: 0.7,
