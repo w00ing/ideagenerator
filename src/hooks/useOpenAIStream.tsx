@@ -7,7 +7,8 @@ export const useOpenAIStream = (): [
   string,
   boolean,
   (args: { input: string; type: PromptType }) => Promise<void>,
-  boolean
+  boolean,
+  () => void
 ] => {
   const [data, setData] = useState('');
   const [generating, setGenerating] = useState(false);
@@ -73,5 +74,10 @@ export const useOpenAIStream = (): [
     }
   };
 
-  return [data, generating, generateStream, done];
+  const clearData = () => {
+    setData('');
+    setDone(false);
+  };
+
+  return [data, generating, generateStream, done, clearData];
 };

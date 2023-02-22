@@ -91,15 +91,15 @@ type CompletionRequestOptions = {
 };
 const completionRequestOptions: CompletionRequestOptions = {
   idea: {
-    temperature: 0.6,
+    temperature: 0.9,
     max_tokens: 400,
-    top_p: 0.95,
+    top_p: 0.6,
     frequency_penalty: 1.2,
     presence_penalty: 0.7,
   },
 
   XYZ: {
-    temperature: 0.6,
+    temperature: 0.8,
     max_tokens: 200,
     top_p: 0.4,
     frequency_penalty: 1.3,
@@ -107,7 +107,7 @@ const completionRequestOptions: CompletionRequestOptions = {
   },
 
   xyz: {
-    temperature: 0.2,
+    temperature: 0.8,
     max_tokens: 90,
     top_p: 0.6,
     frequency_penalty: 1.3,
