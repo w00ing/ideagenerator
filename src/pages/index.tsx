@@ -8,7 +8,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { useCopyToClipboard } from 'usehooks-ts';
 
-import { Locale, locales } from '@/lib/locale';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Layout from '@/components/Layout';
@@ -70,13 +69,13 @@ const Xyz: NextPage = () => {
           <Input
             type="text"
             className="flex-1"
-            placeholder={Locale[(router.locale ?? 'en') as keyof typeof locales].placeholder}
+            placeholder="type your keyword..."
             {...register('input', {
               required: true,
               minLength: 1,
             })}
           />
-          <Button loading={loadingIdea}>{Locale[(router.locale ?? 'en') as keyof typeof locales].button.idea}</Button>
+          <Button loading={loadingIdea}>Generate</Button>
         </form>
 
         <ResizablePanel>
@@ -110,7 +109,7 @@ const Xyz: NextPage = () => {
                       onClick={() => generateXYZStream({ input: idea, type: 'XYZ' })}
                       loading={loadingXYZ}
                     >
-                      {Locale[(router.locale ?? 'en') as keyof typeof locales].button.XYZ}
+                      Turn to XYZ Hypothesis
                     </Button>
                   )}
                 </div>
@@ -138,7 +137,7 @@ const Xyz: NextPage = () => {
                       onClick={() => generatexyzStream({ input: XYZ, type: 'xyz' })}
                       loading={loadingxyz}
                     >
-                      {Locale[(router.locale ?? 'en') as keyof typeof locales].button.xyz}
+                      Narrow it down
                     </Button>
                   )}
                 </div>
@@ -169,7 +168,7 @@ const Xyz: NextPage = () => {
                       onClick={() => generatexyzStream({ input: xyz, type: 'xyz' })}
                       loading={loadingxyz}
                     >
-                      {Locale[(router.locale ?? 'en') as keyof typeof locales].button.further}
+Make it narrower
                     </Button>
                   )} */}
                 </div>

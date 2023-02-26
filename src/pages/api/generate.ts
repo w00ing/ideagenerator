@@ -54,7 +54,7 @@ export default async function handler(req: Request): Promise<Response> {
     return new Response('No input in the request', { status: 400 });
   }
 
-  const payload = createOpenAIStreamPayload(input, type, locale);
+  const payload = createOpenAIStreamPayload(input, type);
 
   const stream = await OpenAIStream(payload);
   return new Response(stream);

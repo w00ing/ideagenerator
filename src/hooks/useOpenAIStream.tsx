@@ -28,7 +28,7 @@ export const useOpenAIStream = (): [
   const generateStream = async ({ input, type }: { input: string; type: PromptType }) => {
     setGenerating(true);
     setData('');
-    const body = { input, type, locale: router.locale };
+    const body = { input, type };
     console.log('body', body);
 
     const controller = new AbortController();

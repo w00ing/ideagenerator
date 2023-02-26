@@ -3,8 +3,6 @@
 import { ParsedEvent, ReconnectInterval, createParser } from 'eventsource-parser';
 import { match } from 'ts-pattern';
 
-import { Locale } from '@/lib/locale';
-
 export interface OpenAIStreamPayload {
   model: string;
   prompt: string;
@@ -75,10 +73,7 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
 
 export type PromptType = 'idea' | 'XYZ' | 'xyz';
 
-function createOptions(
-  type: PromptType,
-  locale: Locale = 'en'
-): CompletionRequestOptions[keyof CompletionRequestOptions] {
+function createOptions(type: PromptType): CompletionRequestOptions[keyof CompletionRequestOptions] {
   return {
     ...completionRequestOptions[type],
   };
@@ -115,20 +110,17 @@ const completionRequestOptions: CompletionRequestOptions = {
   },
 };
 
-function createPrompt(input: string, type: PromptType, locale: Locale = 'en') {
-  return match([type, locale])
-    .with(['idea', 'en'], () => process.env.PROMPT_IDEA_EN + input + ' Idea: ')
-    .with(['XYZ', 'en'], () => process.env.PROMPT_XYZ_EN + input + ' XYZ Hypothesis: ')
-    .with(['xyz', 'en'], () => process.env.PROMPT_xyz_EN + input + ' XYZ Hypothesis: ')
-    .with(['idea', 'ko'], () => process.env.PROMPT_IDEA_KO + input + ' 아이디어: ')
-    .with(['XYZ', 'ko'], () => process.env.PROMPT_XYZ_KO + input + ' XYZ 가설: ')
-    .with(['xyz', 'ko'], () => process.env.PROMPT_xyz_KO + input + ' XYZ 가설: ')
+function createPrompt(input: string, type: PromptType) {
+  return match(type)
+    .with('idea', () => process.env.PROMPT_IDEA_EN + input + ' Idea: ')
+    .with('XYZ', () => process.env.PROMPT_XYZ_EN + input + ' XYZ Hypothesis: ')
+    .with('xyz', () => process.env.PROMPT_xyz_EN + input + ' XYZ Hypothesis: ')
     .otherwise(() => '');
 }
 
-export function createOpenAIStreamPayload(input: string, type: PromptType, locale: Locale = 'en') {
-  const prompt = createPrompt(input, type, locale);
-  const options = createOptions(type, locale);
+export function createOpenAIStreamPayload(input: string, type: PromptType) {
+  const prompt = createPrompt(input, type);
+  const options = createOptions(type);
   return {
     model: 'text-davinci-003',
     prompt,
