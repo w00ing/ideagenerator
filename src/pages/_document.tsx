@@ -11,7 +11,7 @@ export default function Document() {
         <meta property="og:title" content="Idea Generator" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Idea Generator" />
-        <meta name="twitter:description" content="Generate an IT service idea from any keyword." />
+        <meta name="twitter:description" content="Generate creative ideas from any keyword in seconds" />
         <meta property="og:image" content="https://ideagenerator-xyz.vercel.app/og-image.png" />
         <meta name="twitter:image" content="https://ideagenerator-xyz.vercel.app/og-image.png" />
       </Head>
