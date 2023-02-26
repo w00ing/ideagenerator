@@ -110,11 +110,17 @@ const completionRequestOptions: CompletionRequestOptions = {
   },
 };
 
+const PROMPTS = {
+  IDEA: `I'll give you a keyword. Generate an idea for an IT service with the keyword. Answer as if you were a highly-creative entrepreneur with lots of successful experience. First, create a highly creative name for the service. The service name could include word puns or something that would make people interested. Then describe the service. Keep the description concise, in 2-3 sentences. For example, if the keyword is 'scheduler', then the answer could be like this: 'ScheduleMe: A service that provides scheduling solutions for busy professionals. Customers can use the app to book meetings, appointments, and other events with ease. The app also offers reminders and notifications to ensure customers don't miss any important dates or deadlines. Additionally, it integrates with popular calendar apps so users can easily keep track of their schedule in one place.' Try to be diverse with the answer. Keyword: `,
+  XYZ: `Create an XYZ hypothesis with the idea. An XYZ hypothesis has the following format: At least X percent of Y will Z. Here, Z should describe the customer action toward the service we are trying to ship. The service customers willing to purchase should be specific and actionable, so that we could start doing it right away. The hypothesis should focus on the problem the service could solve for potential customers. It should contain following points. 1: Target users and the propotion of it that will benefit from the service. 2: Single important benefit the customers will receive. 3: How much customers will be paying for the service, which we could use as a metric to verify our hypothesis. Avoid vague expressions, such as 'will report improved air quality'. Instead, use concrete numbers that we could use as measurements afterwards to examine the success of the service. Keep the percentage less than 40%. Keep the answer in one setence. For example, a good XYZ hypothesis is this: 'At least 10 percent of people living in cities with an air quality index of 100 or higher will purchase a portable pollution detector priced at $120.' Idea: `,
+  xyz: `Narrow down given XYZ hypothesis. The scope of the hypothesis should become narrower in relation to region, population, and etc. Make sure to narrow down to specific location. For example, if an XYZ hypothesis is 'at least 10% of people in cities with an air quality index of over 100 will purchase a $120 air purifier,' a narrowed down hypothesis would be,'at least 10% of parents at Beijing Tote Academy will purchase an $80 portable pollution detector.' Keep percentage X the same, or lower. Y should become narrower. Z should become narrower. The service definition should become narrower in scope, which should be actionable right away. XYZ Hypothesis: `,
+};
+
 function createPrompt(input: string, type: PromptType) {
   return match(type)
-    .with('idea', () => process.env.PROMPT_IDEA_EN + input + ' Idea: ')
-    .with('XYZ', () => process.env.PROMPT_XYZ_EN + input + ' XYZ Hypothesis: ')
-    .with('xyz', () => process.env.PROMPT_xyz_EN + input + ' XYZ Hypothesis: ')
+    .with('idea', () => PROMPTS.IDEA + input + ' Idea: ')
+    .with('XYZ', () => PROMPTS.XYZ + input + ' XYZ Hypothesis: ')
+    .with('xyz', () => PROMPTS.xyz + input + ' XYZ Hypothesis: ')
     .otherwise(() => '');
 }
 
