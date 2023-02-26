@@ -70,9 +70,11 @@ const Xyz: NextPage = () => {
             type="text"
             className="flex-1"
             placeholder="type your keyword..."
+            maxLength={100}
             {...register('input', {
               required: true,
               minLength: 1,
+              maxLength: 100,
             })}
           />
           <Button loading={loadingIdea}>Generate</Button>
