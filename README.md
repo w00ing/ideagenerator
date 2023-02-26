@@ -1,38 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [Idea Generator](https://ideagenerator-xyz.vercel.app/)
 
-## Getting Started
+Type in any keyword to generate creative ideas for an IT service!
 
-First, run the development server:
+https://user-images.githubusercontent.com/29723695/221411205-78d52d5f-a5bd-4c18-87eb-da162c61bd56.MOV
+
+
+## How it works
+
+It uses GPT-3 model provided by [OpenAI](https://platform.openai.com/docs/models/gpt-3) to generate creative ideas from the given keyword. This application takes a keyword from you, combines it with the prompt you define in .env file, and sends it through the OpenAI's api using a Next.js API route. It then returns an idea generated from the keyword. Furthermore, you can construct an [XYZ Hypothesis](https://www.youtube.com/watch?v=4sZMHAMN0DQ) based on the generated idea.
+
+## Running Locally
+
+### Cloning the repository the local machine.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Creating a account on OpenAI to get an API key.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Go to [OpenAI](https://openai.com/api/) to make an account.
+2. Click on your profile picture in the top right corner, and click on "View API Keys".
+3. Click on "Create new secret key". Copy the secret key.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Storing API key in .env file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Create a file in root directory of project with env. And store your API key in it, as shown in the .example.env file.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+If you'd also like to do rate limiting, create an account on UpStash, create a Redis database, and populate the two environment variables in `.env` as well. If you don't want to do rate limiting, you don't need to make any changes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installing the dependencies.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+yarn install
+```
 
-## Deploy on Vercel
+### Running the application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Then, run the application in the command line and it will be available at `http://localhost:3000`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+yarn dev
+```
