@@ -39,7 +39,7 @@ export default async function handler(req: Request): Promise<Response> {
   //   res.setHeader('X-RateLimit-Remaining', result.remaining);
 
   //   if (!result.success) {
-  //     res.status(429).json('Too many uploads in 1 minute. Please try again in a few minutes.');
+  //     res.status(429).json('Too many requests in 1 minute. Please try again in a few minutes.');
   //     return;
   //   }
   // }
