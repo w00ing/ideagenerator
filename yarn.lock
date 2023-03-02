@@ -1007,6 +1007,208 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stdlib/assert-has-own-property@npm:^0.0.7, @stdlib/assert-has-own-property@npm:^0.0.x":
+  version: 0.0.7
+  resolution: "@stdlib/assert-has-own-property@npm:0.0.7"
+  checksum: 4f1efbd2352214898792fea5bf83d190f9899a28d2eab52bca95de19370c112a385961390c423863be9977851f22003aee2268c1806138ad20d90bfa8d87eb95
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/assert-has-symbol-support@npm:^0.0.x":
+  version: 0.0.8
+  resolution: "@stdlib/assert-has-symbol-support@npm:0.0.8"
+  dependencies:
+    "@stdlib/cli-ctor": ^0.0.x
+    "@stdlib/fs-read-file": ^0.0.x
+  bin:
+    has-symbol-support: bin/cli
+  checksum: 122d53efd4f8489a975486f1c79ec302102158f7bc92b3b13f936c8eae01189c2bf93483adb3942a310357425f9a4251959793e9a77ef310b2944af44396c8fc
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/assert-has-tostringtag-support@npm:^0.0.x":
+  version: 0.0.9
+  resolution: "@stdlib/assert-has-tostringtag-support@npm:0.0.9"
+  dependencies:
+    "@stdlib/assert-has-symbol-support": ^0.0.x
+    "@stdlib/cli-ctor": ^0.0.x
+    "@stdlib/fs-read-file": ^0.0.x
+  bin:
+    has-tostringtag-support: bin/cli
+  checksum: e2d10af88f36ba0ae9e0a205761eb6c6497b4dba037fdd1302c345c419c3ff33dcc9e3162b83a98816a079ac26415e28bdfc160ae2822941d7bec41d516be2e4
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/assert-is-boolean@npm:^0.0.8":
+  version: 0.0.8
+  resolution: "@stdlib/assert-is-boolean@npm:0.0.8"
+  dependencies:
+    "@stdlib/assert-has-tostringtag-support": ^0.0.x
+    "@stdlib/utils-define-nonenumerable-read-only-property": ^0.0.x
+    "@stdlib/utils-native-class": ^0.0.x
+  checksum: 501a78fa4a60816fe24de8870d2bccf1cdc2f6a1d2d4ae2b4d10ba6b55f667fc4a658504dc12fe89c697aa6f81020f14c9c8cb5512b0e24d33f88c705028b7b7
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/assert-is-string@npm:^0.0.8":
+  version: 0.0.8
+  resolution: "@stdlib/assert-is-string@npm:0.0.8"
+  dependencies:
+    "@stdlib/assert-has-tostringtag-support": ^0.0.x
+    "@stdlib/utils-define-nonenumerable-read-only-property": ^0.0.x
+    "@stdlib/utils-native-class": ^0.0.x
+  checksum: c1bde204d24c2debf348202b432fa2376f0d53d8949a8a2f1cebc298e417495242267732bdb87df693ba46de3f2777895ed09d5271ba8ca83e107a7412e23c84
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/cli-ctor@npm:^0.0.x":
+  version: 0.0.3
+  resolution: "@stdlib/cli-ctor@npm:0.0.3"
+  dependencies:
+    "@stdlib/utils-define-nonenumerable-read-only-property": ^0.0.x
+    "@stdlib/utils-noop": ^0.0.x
+    minimist: ^1.2.0
+  checksum: c3b6e8b9d149b96a1e97df91e77fbc5245a92b504c277d993d2c08ff263ce46fc83dd211ee71e0e0641f700d7622b88265ce9a73b7628176f16626e8abe0e213
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/fs-read-file@npm:^0.0.x":
+  version: 0.0.8
+  resolution: "@stdlib/fs-read-file@npm:0.0.8"
+  dependencies:
+    "@stdlib/cli-ctor": ^0.0.x
+    "@stdlib/utils-define-nonenumerable-read-only-property": ^0.0.x
+  bin:
+    read-file: bin/cli
+  checksum: 10a1ead656b8a5d7f6f4975eb0d65c385f827e106452fb055caf9a471b672da33b6f282ea5a91cfb294a7d94152ab7133529ddaabdbfa63706253ba88c50bd0d
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/nlp-sentencize@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@stdlib/nlp-sentencize@npm:0.0.2"
+  dependencies:
+    "@stdlib/assert-is-string": ^0.0.8
+    "@stdlib/nlp-tokenize": ^0.0.11
+    "@stdlib/string-base-trim": ^0.0.2
+  checksum: 6d5968d21505a194461f69fd2ef10d99d1c451d9dcef71bc0e0c044e1dec665613945bde306743197d72a5f13981d84008c9a090dfe3a0b2f46ff947e43b7c0e
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/nlp-tokenize@npm:^0.0.11":
+  version: 0.0.11
+  resolution: "@stdlib/nlp-tokenize@npm:0.0.11"
+  dependencies:
+    "@stdlib/assert-has-own-property": ^0.0.7
+    "@stdlib/assert-is-boolean": ^0.0.8
+    "@stdlib/assert-is-string": ^0.0.8
+    "@stdlib/string-format": ^0.0.3
+  checksum: a98f6d155bd900af1252dd99ccc347bfc4ca66897b621529eb92998be5804e80cd4aad320eed3ef0b1e56c37804c7d4da177eac03ed74957d2092dfb8886ea6a
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/string-base-format-interpolate@npm:^0.0.x":
+  version: 0.0.4
+  resolution: "@stdlib/string-base-format-interpolate@npm:0.0.4"
+  checksum: 6eec4db6689fc7db21b85d70a944995721d5dcc6805f7a0c1c90070ed574e831252d252ce121abf4c76d2fdf0290ba04687cd867b23bd7f8229bd4e11b4df7fd
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/string-base-format-tokenize@npm:^0.0.x":
+  version: 0.0.4
+  resolution: "@stdlib/string-base-format-tokenize@npm:0.0.4"
+  checksum: 40a18396c16c75ecfc9b517119a276f5bdcc3f45ef6107ed6d3f4549e2be3b88a5eee38149dd5010a5f79bd091add273b162cbe2a95af90a86749744a0dc32dd
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/string-base-replace@npm:^0.0.x":
+  version: 0.0.2
+  resolution: "@stdlib/string-base-replace@npm:0.0.2"
+  checksum: d87b61a197e8e668ebe742ea248a96cd1ca12596e184f7304705a9f500d17eb254bb4faf916042263e1ad1b46e3c0c619975ae049fdcb901e61346ec440f78dc
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/string-base-trim@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@stdlib/string-base-trim@npm:0.0.2"
+  dependencies:
+    "@stdlib/string-base-replace": ^0.0.x
+  checksum: ee2e799f3fed630d4e1410b4426840e2381546e2714f76ec49ef932f68b20a34e16f7277b0cb1bd4b54fd237c4f642ff99e87d83d8339411313d81b840d25f18
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/string-format@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@stdlib/string-format@npm:0.0.3"
+  dependencies:
+    "@stdlib/string-base-format-interpolate": ^0.0.x
+    "@stdlib/string-base-format-tokenize": ^0.0.x
+  checksum: b66be4fb1afa0d9b1ba3ee9fd00e0cf4d466e15e209f349d123e542292fa2489a1e2253dd170e87182ef7a51d103e2458df44f4ca3a697add6795525736982fe
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/types@npm:^0.0.x":
+  version: 0.0.14
+  resolution: "@stdlib/types@npm:0.0.14"
+  checksum: 5680a655ddb3ad730f5c7eb2363a43e089f3e6a1b85b12546cab49f7749bb3baf293bd50fbfe55486f233f4227f1020b65eb461b754b94fb4a4bc2799647ec22
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/utils-define-nonenumerable-read-only-property@npm:^0.0.x":
+  version: 0.0.7
+  resolution: "@stdlib/utils-define-nonenumerable-read-only-property@npm:0.0.7"
+  dependencies:
+    "@stdlib/types": ^0.0.x
+    "@stdlib/utils-define-property": ^0.0.x
+  checksum: 0ec1480e58c25d64144cf0c88e241604a07a9faa613e0468d79e7597adfc109a57cb08afac1868180e6fe0b02cd3517b6fc2da80d03300e63e61fc0709cf8090
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/utils-define-property@npm:^0.0.x":
+  version: 0.0.9
+  resolution: "@stdlib/utils-define-property@npm:0.0.9"
+  dependencies:
+    "@stdlib/types": ^0.0.x
+  checksum: f9b7b20765ce7fcae7a0b57b90133be4259344f37faea929d873f46d5e4bb56c9da74fdbea26d945da94536e94b477ebd1a41708d2dbcdfe3d69208674175438
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/utils-native-class@npm:^0.0.x":
+  version: 0.0.8
+  resolution: "@stdlib/utils-native-class@npm:0.0.8"
+  dependencies:
+    "@stdlib/assert-has-own-property": ^0.0.x
+    "@stdlib/assert-has-tostringtag-support": ^0.0.x
+  checksum: 4867eb4107d3924dfb60fa3351412c6790440e917087be6029ca89780b4a528aacaa672f588d482f5ca905842893cc6ae3cf6d0ee44ec378d1a578ae223fea37
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
+"@stdlib/utils-noop@npm:^0.0.x":
+  version: 0.0.14
+  resolution: "@stdlib/utils-noop@npm:0.0.14"
+  checksum: 907017cedeb7329b611dc6217a1c4c5a39070dc06e3bf5c895b11786d126eea0367d83315d48519395d5ac4af713155e0f1ccf5f2741ed03701b7a76355b975c
+  conditions: (os=aix | os=darwin | os=freebsd | os=linux | os=macos | os=openbsd | os=sunos | os=win32 | os=windows)
+  languageName: node
+  linkType: hard
+
 "@swc/helpers@npm:0.4.14":
   version: 0.4.14
   resolution: "@swc/helpers@npm:0.4.14"
@@ -1034,6 +1236,13 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: e60b153664572116dfea673c5bda7778dbff150498f44f998e34b5886d8afc47f16799280e4b6e241c0472aef1bc36add771c569c68fc5125fc2ae519a3eb9ac
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4.14.191":
+  version: 4.14.191
+  resolution: "@types/lodash@npm:4.14.191"
+  checksum: ba0d5434e10690869f32d5ea49095250157cae502f10d57de0a723fd72229ce6c6a4979576f0f13e0aa9fbe3ce2457bfb9fa7d4ec3d6daba56730a51906d1491
   languageName: node
   linkType: hard
 
@@ -1436,6 +1645,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"array-keyed-map@npm:^2.1.3":
+  version: 2.1.3
+  resolution: "array-keyed-map@npm:2.1.3"
+  checksum: 53b45671922bbe7a7eb34950887fd4b1ba4154b0e0002523efa8fb352b320aaa6f798e4d7af151fc8dd4f3365996974f40f141e201d9aae90ea8b3383daf98f8
+  languageName: node
+  linkType: hard
+
 "array-union@npm:^2.1.0":
   version: 2.1.0
   resolution: "array-union@npm:2.1.0"
@@ -1532,6 +1748,17 @@ __metadata:
   dependencies:
     follow-redirects: ^1.14.8
   checksum: d9eb58ff4bc0b36a04783fc9ff760e9245c829a5a1052ee7ca6013410d427036b1d10d04e7380c02f3508c5eaf3485b1ae67bd2adbfec3683704745c8d7a6e1a
+  languageName: node
+  linkType: hard
+
+"axios@npm:^1.2.4":
+  version: 1.3.4
+  resolution: "axios@npm:1.3.4"
+  dependencies:
+    follow-redirects: ^1.15.0
+    form-data: ^4.0.0
+    proxy-from-env: ^1.1.0
+  checksum: 7440edefcf8498bc3cdf39de00443e8101f249972c83b739c6e880d9d669fea9486372dbe8739e88b3bf8bb1ad15f6106693f206f078f4516fe8fd47b1c3093c
   languageName: node
   linkType: hard
 
@@ -1668,7 +1895,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^4.0.0":
+"chalk@npm:^4.0.0, chalk@npm:^4.1.2":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
   dependencies:
@@ -1832,6 +2059,13 @@ __metadata:
   version: 3.1.1
   resolution: "csstype@npm:3.1.1"
   checksum: 1f7b4f5fdd955b7444b18ebdddf3f5c699159f13e9cf8ac9027ae4a60ae226aef9bbb14a6e12ca7dba3358b007cee6354b116e720262867c398de6c955ea451d
+  languageName: node
+  linkType: hard
+
+"csv-parse@npm:^5.3.4":
+  version: 5.3.5
+  resolution: "csv-parse@npm:5.3.5"
+  checksum: 077e010db2ebbc9db708b719f2f650577c5ec8d176cd4363235d6644c36c642811d05ef1b6907390dd7466bde20a8dbb0f34994bc0e101521eb09e6691a02206
   languageName: node
   linkType: hard
 
@@ -2573,7 +2807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.8":
+"follow-redirects@npm:^1.14.8, follow-redirects@npm:^1.15.0":
   version: 1.15.2
   resolution: "follow-redirects@npm:1.15.2"
   peerDependenciesMeta:
@@ -2874,6 +3108,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gpt-3-encoder@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "gpt-3-encoder@npm:1.1.4"
+  checksum: bfcbffa74272bd544015305ae42f4b2d2e138ffbed157d068cc4de5c5cb4e0c964d0ff6512218809a04d10484325eb5b5d2975edf36170b1f443cb43887356e8
+  languageName: node
+  linkType: hard
+
+"gpt3-tokenizer@npm:^1.1.4":
+  version: 1.1.5
+  resolution: "gpt3-tokenizer@npm:1.1.5"
+  dependencies:
+    array-keyed-map: ^2.1.3
+  checksum: 9d458f1d57fc381f7e348780c90aa25758a224b2b06424ea255c6f0693b16d06eaaa4f4a26635d916cd6131ed47eba7f66bde81190a5f5bc606aa9a97bacb51a
+  languageName: node
+  linkType: hard
+
 "graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6":
   version: 4.2.10
   resolution: "graceful-fs@npm:4.2.10"
@@ -3020,6 +3270,7 @@ __metadata:
     "@radix-ui/react-toast": ^1.1.2
     "@radix-ui/react-tooltip": ^1.0.3
     "@rvxlab/tailwind-plugin-ios-full-height": ^1.1.0
+    "@types/lodash": ^4.14.191
     "@types/node": 18.14.0
     "@types/react": 18.0.28
     "@types/react-dom": 18.0.11
@@ -3038,12 +3289,16 @@ __metadata:
     eslint-plugin-simple-import-sort: ^8.0.0
     eventsource-parser: ^0.1.0
     framer-motion: ^9.0.4
+    gpt-3-encoder: ^1.1.4
+    immer: ^9.0.19
+    lodash: ^4.17.21
     lucide-react: ^0.115.0
     next: 13.1.6
     openai: ^3.1.0
     postcss: ^8.4.21
     prettier: ^2.8.4
     prettier-plugin-tailwindcss: ^0.2.3
+    promptable: ^0.0.10
     react: 18.2.0
     react-dom: 18.2.0
     react-hook-form: ^7.43.1
@@ -3055,6 +3310,7 @@ __metadata:
     ts-pattern: ^4.1.4
     typescript: 4.9.5
     usehooks-ts: ^2.9.1
+    zustand: ^4.3.5
   languageName: unknown
   linkType: soft
 
@@ -3062,6 +3318,13 @@ __metadata:
   version: 5.2.4
   resolution: "ignore@npm:5.2.4"
   checksum: 3d4c309c6006e2621659311783eaea7ebcd41fe4ca1d78c91c473157ad6666a57a2df790fe0d07a12300d9aac2888204d7be8d59f9aaf665b1c7fcdb432517ef
+  languageName: node
+  linkType: hard
+
+"immer@npm:^9.0.19":
+  version: 9.0.19
+  resolution: "immer@npm:9.0.19"
+  checksum: f02ee53989989c287cd548a3d817fccf0bfe56db919755ee94a72ea3ae78a00363fba93ee6c010fe54a664380c29c53d44ed4091c6a86cae60957ad2cfabc010
   languageName: node
   linkType: hard
 
@@ -3542,6 +3805,13 @@ __metadata:
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
   checksum: ad580b4bdbb7ca1f7abf7e1bce63a9a0b98e370cf40194b03380a46b4ed799c9573029599caebc1b14e3f24b111aef72b96674a56cfa105e0f5ac70546cdc005
+  languageName: node
+  linkType: hard
+
+"lodash@npm:^4.17.21":
+  version: 4.17.21
+  resolution: "lodash@npm:4.17.21"
+  checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
   languageName: node
   linkType: hard
 
@@ -4357,6 +4627,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"promptable@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "promptable@npm:0.0.10"
+  dependencies:
+    "@stdlib/nlp-sentencize": ^0.0.2
+    axios: ^1.2.4
+    chalk: ^4.1.2
+    csv-parse: ^5.3.4
+    gpt3-tokenizer: ^1.1.4
+    openai: ^3.1.0
+    typescript: latest
+    uuid: ^9.0.0
+    zod: ^3.20.2
+  checksum: eb5fb6b6395cdd77e139d3d4bf8164a18cc1ffad9e35eb5e1ba82af54eec5afb9df99c776116f631639d064731c1326b404e105d15141e88ff26a165bb34f34f
+  languageName: node
+  linkType: hard
+
 "prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
@@ -4365,6 +4652,13 @@ __metadata:
     object-assign: ^4.1.1
     react-is: ^16.13.1
   checksum: c056d3f1c057cb7ff8344c645450e14f088a915d078dcda795041765047fa080d38e5d626560ccaac94a4e16e3aa15f3557c1a9a8d1174530955e992c675e459
+  languageName: node
+  linkType: hard
+
+"proxy-from-env@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "proxy-from-env@npm:1.1.0"
+  checksum: ed7fcc2ba0a33404958e34d95d18638249a68c430e30fcb6c478497d72739ba64ce9810a24f53a7d921d0c065e5b78e3822759800698167256b04659366ca4d4
   languageName: node
   linkType: hard
 
@@ -5070,7 +5364,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.9.5":
+"typescript@npm:4.9.5, typescript@npm:latest":
   version: 4.9.5
   resolution: "typescript@npm:4.9.5"
   bin:
@@ -5080,7 +5374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.9.5#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.9.5#~builtin<compat/typescript>, typescript@patch:typescript@latest#~builtin<compat/typescript>":
   version: 4.9.5
   resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
   bin:
@@ -5155,6 +5449,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"use-sync-external-store@npm:1.2.0":
+  version: 1.2.0
+  resolution: "use-sync-external-store@npm:1.2.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 5c639e0f8da3521d605f59ce5be9e094ca772bd44a4ce7322b055a6f58eeed8dda3c94cabd90c7a41fb6fa852210092008afe48f7038792fd47501f33299116a
+  languageName: node
+  linkType: hard
+
 "usehooks-ts@npm:^2.9.1":
   version: 2.9.1
   resolution: "usehooks-ts@npm:2.9.1"
@@ -5169,6 +5472,15 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 474acf1146cb2701fe3b074892217553dfcf9a031280919ba1b8d651a068c9b15d863b7303cb15bd00a862b498e6cf4ad7b4a08fb134edd5a6f7641681cb54a2
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "uuid@npm:9.0.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 8dd2c83c43ddc7e1c71e36b60aea40030a6505139af6bee0f382ebcd1a56f6cd3028f7f06ffb07f8cf6ced320b76aea275284b224b002b289f89fe89c389b028
   languageName: node
   linkType: hard
 
@@ -5304,9 +5616,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.20.0":
+"zod@npm:^3.20.0, zod@npm:^3.20.2":
   version: 3.20.6
   resolution: "zod@npm:3.20.6"
   checksum: 804b1934b8b5e2fa3750bec90043e8118b201f330b9957b8b768389a971acadf812d2060cf62921086512dab4af691d10490acb03333da58fc485c0791893c89
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^4.3.5":
+  version: 4.3.5
+  resolution: "zustand@npm:4.3.5"
+  dependencies:
+    use-sync-external-store: 1.2.0
+  peerDependencies:
+    immer: ">=9.0"
+    react: ">=16.8"
+  peerDependenciesMeta:
+    immer:
+      optional: true
+    react:
+      optional: true
+  checksum: 166099ecadd870e5e0f51b5b443b71145149447b2bfe557d73254891dd0fe603d55c93e560649a7c31a30b4a180dd6d4f4d90463636fd54c3393ace3b68dbc67
   languageName: node
   linkType: hard

@@ -4,6 +4,7 @@ import { Ratelimit } from '@upstash/ratelimit';
 import { locales } from '@/lib/locale';
 import { OpenAIStream, PromptType, createOpenAIStreamPayload } from '@/lib/openAIStream';
 import { redis } from '@/lib/redis';
+import { ChatMessage } from '@/lib/store';
 
 if (!process.env.OPENAI_API_KEY) {
   throw new Error('Missing env var from OpenAI');
@@ -14,12 +15,14 @@ export const config = {
 };
 
 type Data = string;
+
+type RequestBody = {
+  messages: ChatMessage[];
+  type: PromptType;
+  locale?: keyof typeof locales;
+};
 interface ExtendedNextApiRequest extends NextApiRequest {
-  body: {
-    input: string;
-    type: PromptType;
-    locale?: keyof typeof locales;
-  };
+  body: RequestBody;
 }
 
 // Create a new ratelimiter, that allows 3 requests per 60 seconds
@@ -44,14 +47,10 @@ export default async function handler(req: Request): Promise<Response> {
   //   }
   // }
 
-  const { input, type, locale } = (await req.json()) as {
-    input: string;
-    type: PromptType;
-    locale?: keyof typeof locales;
-  };
+  const { messages, type, locale } = (await req.json()) as RequestBody;
 
-  if (!input || !type) {
-    return new Response('No input in the request', { status: 400 });
+  if (messages.length === 0 || !type) {
+    return new Response('No messages in the request', { status: 400 });
   }
 
   const payload = createOpenAIStreamPayload(input, type);

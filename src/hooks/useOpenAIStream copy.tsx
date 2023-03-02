@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { PromptType } from '@/lib/openAIStream';
-import { ChatMessage, useChatMessageStore } from '@/lib/store';
 
 export const useOpenAIStream = (): [
   string,
@@ -11,12 +10,9 @@ export const useOpenAIStream = (): [
   boolean,
   () => void
 ] => {
-  const [messageText, setMessageText] = useState('');
+  const [data, setData] = useState('');
   const [generating, setGenerating] = useState(false);
   const [done, setDone] = useState(false);
-  const messages = useChatMessageStore((state) => state.messages);
-  const appendMessage = useChatMessageStore((state) => state.appendMessage);
-  const setLastMessage = useChatMessageStore((state) => state.setLastMessage);
   const router = useRouter();
 
   useEffect(() => {
@@ -31,9 +27,8 @@ export const useOpenAIStream = (): [
 
   const generateStream = async ({ input, type }: { input: string; type: PromptType }) => {
     setGenerating(true);
-    setMessageText('');
-    // const body = { input, type };
-    const body: { messages: ChatMessage[] } = { messages: [...messages, { role: 'user', content: input }] };
+    setData('');
+    const body = { input, type };
     console.log('body', body);
 
     const controller = new AbortController();
@@ -64,17 +59,15 @@ export const useOpenAIStream = (): [
         const { value, done: readerDone } = await reader.read();
         done = readerDone;
         const chunkValue = decoder.decode(value);
-        setMessageText((prevData) => prevData + chunkValue);
-        setLastMessage;
+        setData((prevData) => prevData + chunkValue);
       }
       if (done) {
         setGenerating(false);
         setDone(true);
-        appendMessage({ role: 'assistant', content: messageText });
       }
     } catch (err) {
       setGenerating(false);
-      setMessageText('');
+      setData('');
       console.error(err);
     } finally {
       controller.abort();
@@ -82,9 +75,9 @@ export const useOpenAIStream = (): [
   };
 
   const clearData = () => {
-    setMessageText('');
+    setData('');
     setDone(false);
   };
 
-  return [messageText, generating, generateStream, done, clearData];
+  return [data, generating, generateStream, done, clearData];
 };
